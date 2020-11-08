@@ -7,16 +7,19 @@
             <th>Descripción</th>
             <th>Precio</th>
             <th>Stock</th>
+            <th>Compra</th>
         </tr>
     </thead>
     <tbody>
         <tr *ngFor="let item of items" [ngClass]="{sale: item.sale}">
-            <td><img [src]='item.img' [alt]='item.name'></td>
+            <td><img width="90" class="img-thumbnail" [src]='item.img' [alt]='item.name'></td>
             <td>{{item.name}}</td>
             <td>{{item.type|uppercase}}</td>
             <td>{{item.price|currency}}</td>
             <td><span class="badge badge-warning" *ngIf="item.stock==0">No hay stock</span></td>
-
+            <td><button type="button" class="btn btn-info btn-sm" (click)="downQuantity(item)">-</button >
+                <input type="number" [(ngModel)]="item.quantity">
+                <button type="button" class="btn btn-info btn-sm" (click)="upQuantity(item)">+</button></td>
         </tr>
     </tbody>
 </table>

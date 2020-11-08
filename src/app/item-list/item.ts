@@ -5,4 +5,5 @@ export interface Item {
   stock: number;
   img: string;
   sale: boolean;
+  quantity: number;
 }

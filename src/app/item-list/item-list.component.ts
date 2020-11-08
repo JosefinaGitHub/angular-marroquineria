@@ -16,6 +16,7 @@ export class ItemListComponent implements OnInit {
       stock : 5,
       img : 'assets/img/cartera.jpg',
       sale: false,
+      quantity: 0,
     },
     {
       name : 'Billetera dos colores',
@@ -24,6 +25,7 @@ export class ItemListComponent implements OnInit {
       stock : 10,
       img : 'assets/img/billetera.jpg',
       sale: false,
+      quantity: 0,
     },
     {
       name : 'Cinto de cuero negro',
@@ -32,6 +34,7 @@ export class ItemListComponent implements OnInit {
       stock : 0,
       img : 'assets/img/cinto.jpg',
       sale: true,
+      quantity: 0,
     },
     {
       name : 'Bandolera juvenil',
@@ -40,6 +43,7 @@ export class ItemListComponent implements OnInit {
       stock : 8,
       img : 'assets/img/bandolera.jpg',
       sale: false,
+      quantity: 0,
     }
   ];
 
@@ -47,5 +51,15 @@ export class ItemListComponent implements OnInit {
 
   ngOnInit(): void {
   }
+  upQuantity(item: Item): void {
+    if (item.quantity < item.stock) {
+      item.quantity++;
+    }
+  }
 
+  downQuantity(item: Item): void {
+    if (item.quantity > 0){
+      item.quantity--;
+    }
+  }
 }
