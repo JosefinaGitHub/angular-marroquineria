@@ -10,34 +10,13 @@
         </tr>
     </thead>
     <tbody>
-        <tr>
+        <tr *ngFor="let item of items" [ngClass]="{sale: item.sale}">
             <td><img [src]='item.img' [alt]='item.name'></td>
             <td>{{item.name}}</td>
-            <td>{{item.type}}</td>
-            <td>{{item.price}}</td>
-            <td>{{item.stock}}</td>
+            <td>{{item.type|uppercase}}</td>
+            <td>{{item.price|currency}}</td>
+            <td><span class="badge badge-warning" *ngIf="item.stock==0">No hay stock</span></td>
 
-        </tr>
-        <tr>
-            <td>Billetera grande</td>
-            <td>Billeteras</td>
-            <td></td>
-            <td></td>
-            <td></td>
-        </tr>
-        <tr>
-            <td>De cuero</td>
-            <td>Cintos</td>
-            <td></td>
-            <td></td>
-            <td></td>
-        </tr>
-        <tr>
-            <td></td>
-            <td>Bandoleras</td>
-            <td></td>
-            <td></td>
-            <td></td>
         </tr>
     </tbody>
 </table>
