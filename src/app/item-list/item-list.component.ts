@@ -51,15 +51,7 @@ export class ItemListComponent implements OnInit {
 
   ngOnInit(): void {
   }
-  upQuantity(item: Item): void {
-    if (item.quantity < item.stock) {
-      item.quantity++;
-    }
-  }
-
-  downQuantity(item: Item): void {
-    if (item.quantity > 0){
-      item.quantity--;
-    }
+  maxReached(m: string) {
+    alert(m);
   }
 }

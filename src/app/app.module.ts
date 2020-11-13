@@ -8,6 +8,7 @@ import { FormsModule } from '@angular/forms';
 import { MarroquineriaAboutComponent } from './marroquineria-about/marroquineria-about.component';
 import { MarroquineriaItemsComponent } from './marroquineria-items/marroquineria-items.component';
 import { MarroquineriaCartComponent } from './marroquineria-cart/marroquineria-cart.component';
+import { InputIntegerComponent } from './input-integer/input-integer.component';
 
 @NgModule({
   declarations: [
@@ -16,6 +17,7 @@ import { MarroquineriaCartComponent } from './marroquineria-cart/marroquineria-c
     MarroquineriaAboutComponent,
     MarroquineriaItemsComponent,
     MarroquineriaCartComponent,
+    InputIntegerComponent,
 
   ],
   imports: [

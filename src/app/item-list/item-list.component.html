@@ -1,24 +1,26 @@
-<table class="table text-center">
-    <thead>
-        <tr>
-            <th>Imagen</th>
-            <th>Nombre</th>
-            <th>Descripción</th>
-            <th>Precio</th>
-            <th>Stock</th>
-            <th>Compra</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr *ngFor="let item of items" [ngClass]="{sale: item.sale}">
-            <td><img width="90" class="img-thumbnail" [src]='item.img' [alt]='item.name'></td>
-            <td>{{item.name}}</td>
-            <td>{{item.type|uppercase}}</td>
-            <td>{{item.price|currency}}</td>
-            <td><span class="badge badge-warning" *ngIf="item.stock==0">No hay stock</span></td>
-            <td><button type="button" class="btn btn-info btn-sm" (click)="downQuantity(item)">-</button >
-                <input class="input-group" type="number" [(ngModel)]="item.quantity">
-                <button type="button" class="btn btn-info btn-sm" (click)="upQuantity(item)">+</button></td>
-        </tr>
-    </tbody>
-</table>
+<div class="conatiner">
+    <table class="table text-center">
+        <thead>
+            <tr>
+                <th>Imagen</th>
+                <th>Nombre</th>
+                <th>Descripción</th>
+                <th>Precio</th>
+                <th>Stock</th>
+                <th>Cant.Compra</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let item of items" [ngClass]="{sale: item.sale}">
+                <td><img width="90" class="img-thumbnail" [src]='item.img' [alt]='item.name'></td>
+                <td>{{item.name}}</td>
+                <td>{{item.type|uppercase}}</td>
+                <td>{{item.price|currency}}</td>
+                <td><span class="badge badge-warning" *ngIf="item.stock==0">No hay stock</span></td>
+                <td>
+                    <app-input-integer [(quantity)]="item.quantity" [max]="item.stock" *ngIf="item.stock" (maxReached)="maxReached($event)"></app-input-integer>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
