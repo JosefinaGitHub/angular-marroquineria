@@ -12,7 +12,7 @@
         </thead>
         <tbody>
             <tr *ngFor="let item of items" [ngClass]="{sale: item.sale}">
-                <td><img width="90" class="img-thumbnail" [src]='https://github.com/JosefinaGitHub/angular-marroquineria/blob/master/src/assets/img/item.img' [alt]='item.name'></td>
+                <td><img width="90" class="img-thumbnail" [src]='item.img' [alt]='item.name'></td>
                 <td>{{item.name}}</td>
                 <td>{{item.type|uppercase}}</td>
                 <td>{{item.price|currency}}</td>
