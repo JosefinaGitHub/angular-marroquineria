@@ -1,5 +1,7 @@
+import { ItemCartService } from './../item-cart.service';
 import { Component, OnInit } from '@angular/core';
 import { Item } from './item';
+
 
 @Component({
   selector: 'app-item-list',
@@ -47,11 +49,22 @@ export class ItemListComponent implements OnInit {
     }
   ];
 
-  constructor() { }
+  constructor(private cart: ItemCartService) {
+  }
 
   ngOnInit(): void {
   }
+
   maxReached(m: string) {
     alert(m);
   }
+
+  addToCart(item): void {
+    this.cart.addToCart(item);
+    item.stock -= item.quantity;
+    item.quantity = 0;
+  }
+
+
+
 }
