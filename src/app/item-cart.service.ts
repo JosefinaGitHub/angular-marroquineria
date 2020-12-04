@@ -19,13 +19,14 @@ export class ItemCartService {
 
   addToCart(item: Item) {
     let art: Item = this._cartList.find((value1) => value1.name == item.name);
-    if (!art) {
-      this._cartList.push({... item});
+    if (item.stock > 0 ){
+      if (!art) {
+        this._cartList.push({... item});
+      }
+      else {
+        item.quantity += item.quantity;
+      }
     }
-    else {
-      item.quantity += item.quantity;
-    }
-
     this.cartList.next(this._cartList);  //equivalente al emitt de eventos
   }
 

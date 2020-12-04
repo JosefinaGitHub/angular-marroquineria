@@ -1,6 +1,8 @@
-<h3>Carrito de Compras</h3>
-<ul>
-    <li *ngFor="let item of (cartList$ | async)">
-        {{item.name}}:{{item.quantity}}
-    </li>
-</ul>
+<div class="bg">
+    <h3 class="text-center">Carrito de Compras</h3>
+    <ul class="bg">
+        <li *ngFor="let item of (cartList$ | async)">
+            {{item.name}}:{{item.quantity}}
+        </li>
+    </ul>
+</div>

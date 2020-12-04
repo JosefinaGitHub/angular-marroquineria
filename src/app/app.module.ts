@@ -9,6 +9,7 @@ import { MarroquineriaAboutComponent } from './marroquineria-about/marroquineria
 import { MarroquineriaItemsComponent } from './marroquineria-items/marroquineria-items.component';
 import { MarroquineriaCartComponent } from './marroquineria-cart/marroquineria-cart.component';
 import { InputIntegerComponent } from './input-integer/input-integer.component';
+import { MarroquineriaContactComponent } from './marroquineria-contact/marroquineria-contact.component';
 
 @NgModule({
   declarations: [
@@ -18,6 +19,7 @@ import { InputIntegerComponent } from './input-integer/input-integer.component';
     MarroquineriaItemsComponent,
     MarroquineriaCartComponent,
     InputIntegerComponent,
+    MarroquineriaContactComponent,
 
   ],
   imports: [

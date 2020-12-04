@@ -15,7 +15,7 @@ export class MarroquineriaCartComponent implements OnInit {
 
   constructor(private cart: ItemCartService) {
 
-    //* Pone observable para que sepamos a qué se refiere, sería la varíable que vamos a mirar
+    // Pone observable para que sepamos a qué se refiere, sería la varíable que vamos a mirar
    // cart.cartList.subscribe( observable  => this.cartList = observable);
    // se reemplaza por un pipe en el html
     this.cartList$ = cart.cartList.asObservable();
